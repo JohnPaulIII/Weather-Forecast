@@ -54,9 +54,6 @@ class PagesController < ApplicationController
     end
     chd.delete_suffix!(',').concat(chd2.delete_suffix(','))
     chl.concat(chl2.delete_suffix('|'))
-    puts chxl
-    puts chd
-    puts chl
     chart_params = {
       chf: 'b0,s,1b67ad|b1,s,37b426|bg,s,f5f5f5',
       chma: '0,0,10,10',
