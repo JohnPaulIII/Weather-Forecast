@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div class="container">
+            <div class="chart">
+                <img src=<%= @chart_uri %> alt="Static Chart"/>
+            </div>
+        </div>
+        <div class="container">
+            <div class="button-box refresh-button">
+                <%= button_to 'Refresh Page', root_path, method: :get %>
+            </div>
+        </div>
+    </body>
+</html>

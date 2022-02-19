@@ -1,0 +1,31 @@
+body {
+    background: #ceedf1;
+}
+
+.container {
+    position: relative;
+}
+
+.chart {
+    width: 700px;
+    height: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 50px 0 0 -350px;
+}
+
+.button-box {
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    
+}
+
+.refresh-button {
+    margin: 525px 0 0 0;
+}
+
+.return-button {
+    margin: 550px 0 0 0;
+}
