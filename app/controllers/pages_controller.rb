@@ -7,23 +7,18 @@ class PagesController < ApplicationController
     end
     ip_results = JSON.parse(ip_data.body)
     
-    geocode_uri = URI('https://geocode.xyz')
-    geocode_params = {
-      locate: ''.concat(ip_results['city']).concat(', ').concat(ip_results['country']),
-      geoit: 'json'
-    }
-    geocode_uri.query = URI.encode_www_form(geocode_params)
+    geocode_uri = URI('http://ip-api.com/json/'.concat(ip_results['ip']))
     geocode_data = Excon.get(geocode_uri.to_s)
     while (geocode_data.status != 200)
       puts 'geocode error'
       geocode_data = Excon.get(geocode_uri.to_s)
     end
     geocode_results = JSON.parse(geocode_data.body)
-
+    
     weather_uri = URI('https://api.open-meteo.com/v1/forecast')
     weather_params = {
-      latitude: geocode_results['latt'],
-      longitude: geocode_results['longt'],
+      latitude: geocode_results['lat'],
+      longitude: geocode_results['lon'],
       temperature_unit: 'fahrenheit',
       timezone: 'America/New_York'
     }
